@@ -2,11 +2,9 @@ import { useState } from "react";
 import { Header } from "@/components/Header";
 import { PatrimoineOverviewCard } from "@/components/PatrimoineOverviewCard";
 import { LignePatrimoineItem } from "@/components/LignePatrimoineItem";
-import { AlerteCard } from "@/components/AlerteCard";
-import { CoachIAPreview } from "@/components/CoachIAPreview";
 import { CoachIAChat } from "@/components/CoachIAChat";
-import { portefeuilleLignes, alertesCoach } from "@/data/mockData";
-import { TrendingUp, DollarSign, Calculator } from "lucide-react";
+import { portefeuilleLignes } from "@/data/mockData";
+import { TrendingUp, DollarSign, Calculator, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Patrimoine = () => {
@@ -17,6 +15,26 @@ const Patrimoine = () => {
       <Header />
 
       <main className="container mx-auto px-6 py-8">
+        {/* Header Section */}
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            <h1 className="text-3xl font-serif text-champagne mb-2">
+              Gestion de Patrimoine
+            </h1>
+            <p className="text-muted-foreground">
+              Vue consolidée de vos actifs et investissements
+            </p>
+          </div>
+
+          <Button
+            onClick={() => setIsChatOpen(true)}
+            className="bg-champagne text-anthracite hover:bg-champagne-muted h-12 px-6"
+          >
+            <Bot className="w-5 h-5 mr-2" />
+            Coach IA & Analyses
+          </Button>
+        </div>
+
         {/* Quick Actions */}
         <div className="flex gap-3 mb-8">
           <Button className="bg-champagne text-anthracite hover:bg-champagne-muted">
@@ -39,15 +57,15 @@ const Patrimoine = () => {
           </Button>
         </div>
 
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        {/* Main Content - 2 Columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Column - Patrimoine Overview */}
-          <div className="lg:col-span-5">
+          <div>
             <PatrimoineOverviewCard />
           </div>
 
-          {/* Middle Column - Lignes Portefeuille */}
-          <div className="lg:col-span-4 space-y-4">
+          {/* Right Column - Lignes Portefeuille */}
+          <div className="space-y-4">
             <div className="mb-4">
               <h2 className="text-xl font-serif text-foreground mb-1">
                 Lignes Principales
@@ -57,7 +75,7 @@ const Patrimoine = () => {
               </p>
             </div>
             <div className="space-y-3">
-              {portefeuilleLignes.slice(0, 6).map((ligne) => (
+              {portefeuilleLignes.slice(0, 8).map((ligne) => (
                 <LignePatrimoineItem key={ligne.id} ligne={ligne} />
               ))}
             </div>
@@ -67,26 +85,6 @@ const Patrimoine = () => {
                 →
               </span>
             </button>
-          </div>
-
-          {/* Right Column - Coach IA & Alertes */}
-          <div className="lg:col-span-3 space-y-4">
-            <CoachIAPreview onOpenChat={() => setIsChatOpen(true)} />
-
-            <div className="mb-4">
-              <h3 className="text-lg font-serif text-foreground mb-1">
-                Alertes & Recommandations
-              </h3>
-              <p className="text-xs text-muted-foreground">
-                {alertesCoach.length} nouvelles
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              {alertesCoach.map((alerte) => (
-                <AlerteCard key={alerte.id} alerte={alerte} />
-              ))}
-            </div>
           </div>
         </div>
       </main>

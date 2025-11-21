@@ -67,9 +67,6 @@ export const Header = () => {
 
           <div className="flex items-center gap-8">
             <div className="hidden lg:block text-right">
-              <p className="text-sm text-muted-foreground mb-1">
-                {t('header.patrimoine.total')}
-              </p>
               <p className="text-3xl font-mono text-champagne font-bold">
                 {formatCurrency(userData.patrimoine)}
               </p>

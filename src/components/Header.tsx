@@ -27,10 +27,10 @@ export const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-12">
             <NavLink to="/" className="block">
-              <h1 className="text-xl font-serif text-champagne">
+              <h1 className="text-2xl font-serif text-champagne">
                 {t('header.title')}
               </h1>
-              <p className="text-xs text-muted-foreground mt-0.5">
+              <p className="text-sm text-muted-foreground mt-0.5">
                 {t('header.subtitle')}
               </p>
             </NavLink>
@@ -39,7 +39,7 @@ export const Header = () => {
               <NavLink
                 to="/patrimoine"
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors hover:text-champagne ${
+                  `text-base font-medium transition-colors hover:text-champagne ${
                     isActive ? "text-champagne" : "text-muted-foreground"
                   }`
                 }
@@ -49,7 +49,7 @@ export const Header = () => {
               <NavLink
                 to="/documents"
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors hover:text-champagne ${
+                  `text-base font-medium transition-colors hover:text-champagne ${
                     isActive ? "text-champagne" : "text-muted-foreground"
                   }`
                 }
@@ -59,7 +59,7 @@ export const Header = () => {
               <NavLink
                 to="/conseil"
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors hover:text-champagne ${
+                  `text-base font-medium transition-colors hover:text-champagne ${
                     isActive ? "text-champagne" : "text-muted-foreground"
                   }`
                 }
@@ -71,16 +71,16 @@ export const Header = () => {
 
           <div className="flex items-center gap-8">
             <div className="hidden lg:block text-right">
-              <p className="text-xs text-muted-foreground mb-1">
+              <p className="text-sm text-muted-foreground mb-1">
                 {t('header.patrimoine.total')}
               </p>
-              <p className="text-2xl font-mono text-champagne font-bold">
+              <p className="text-3xl font-mono text-champagne font-bold">
                 {formatCurrency(userData.patrimoine)}
               </p>
-              <div className="flex items-center justify-end gap-1 text-jade text-sm mt-1">
-                <TrendingUp className="w-3.5 h-3.5" />
+              <div className="flex items-center justify-end gap-1 text-jade text-base mt-1">
+                <TrendingUp className="w-4 h-4" />
                 <span className="font-mono">+{userData.performance}%</span>
-                <span className="text-xs text-muted-foreground ml-1">
+                <span className="text-sm text-muted-foreground ml-1">
                   {t('header.performance.month')}
                 </span>
               </div>

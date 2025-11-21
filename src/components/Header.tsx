@@ -1,8 +1,9 @@
+import { NavLink } from "react-router-dom";
 import { userData } from "@/data/mockData";
 import { Bell, Settings, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export const DashboardHeader = () => {
+export const Header = () => {
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat("fr-FR", {
       style: "currency",
@@ -13,22 +14,45 @@ export const DashboardHeader = () => {
   };
 
   return (
-    <header className="border-b border-border/50 bg-slate-dark/80 backdrop-blur-sm">
+    <header className="border-b border-border/50 bg-slate-dark/80 backdrop-blur-sm sticky top-0 z-50">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-8">
-            <div>
+          <div className="flex items-center gap-12">
+            <NavLink to="/" className="block">
               <h1 className="text-xl font-serif text-champagne">
                 BNP Paribas Patrimoine
               </h1>
               <p className="text-xs text-muted-foreground mt-0.5">
                 Gestion Privée
               </p>
-            </div>
+            </NavLink>
+
+            <nav className="hidden md:flex items-center gap-8">
+              <NavLink
+                to="/patrimoine"
+                className={({ isActive }) =>
+                  `text-sm font-medium transition-colors hover:text-champagne ${
+                    isActive ? "text-champagne" : "text-muted-foreground"
+                  }`
+                }
+              >
+                Gestion Patrimoine
+              </NavLink>
+              <NavLink
+                to="/experts"
+                className={({ isActive }) =>
+                  `text-sm font-medium transition-colors hover:text-champagne ${
+                    isActive ? "text-champagne" : "text-muted-foreground"
+                  }`
+                }
+              >
+                Annuaire Experts
+              </NavLink>
+            </nav>
           </div>
 
           <div className="flex items-center gap-8">
-            <div className="text-right">
+            <div className="hidden lg:block text-right">
               <p className="text-xs text-muted-foreground mb-1">
                 Patrimoine Total
               </p>
@@ -60,7 +84,7 @@ export const DashboardHeader = () => {
                 <Settings className="w-5 h-5" />
               </Button>
               <div className="flex items-center gap-3 ml-2 pl-4 border-l border-border/50">
-                <div className="text-right">
+                <div className="hidden sm:block text-right">
                   <p className="text-sm font-medium text-foreground">
                     {userData.name}
                   </p>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DashboardHeader } from "@/components/DashboardHeader";
+import { Header } from "@/components/Header";
 import { PatrimoineOverviewCard } from "@/components/PatrimoineOverviewCard";
 import { LignePatrimoineItem } from "@/components/LignePatrimoineItem";
 import { AlerteCard } from "@/components/AlerteCard";
@@ -9,12 +9,12 @@ import { portefeuilleLignes, alertesCoach } from "@/data/mockData";
 import { TrendingUp, DollarSign, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const Index = () => {
+const Patrimoine = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
-      <DashboardHeader />
+      <Header />
 
       <main className="container mx-auto px-6 py-8">
         {/* Quick Actions */}
@@ -96,4 +96,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Patrimoine;

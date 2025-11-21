@@ -39,14 +39,14 @@ export const Header = () => {
                 Gestion Patrimoine
               </NavLink>
               <NavLink
-                to="/experts"
+                to="/documents"
                 className={({ isActive }) =>
                   `text-sm font-medium transition-colors hover:text-champagne ${
                     isActive ? "text-champagne" : "text-muted-foreground"
                   }`
                 }
               >
-                Annuaire Experts
+                Vos Documents
               </NavLink>
               <NavLink
                 to="/conseil"

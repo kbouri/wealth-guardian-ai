@@ -71,6 +71,18 @@ export default {
   'conseil.cta.desc': 'Mes conseillers experts t\'accompagnent dans toutes les phases de ton projet',
   'conseil.cta.meeting': 'Prendre rendez-vous',
   'conseil.cta.brochure': 'Télécharger la brochure',
+  'conseil.legal.title': 'Structure juridique de ton patrimoine',
+  'conseil.legal.subtitle': 'Les questions que tu te poses souvent',
+  'conseil.legal.q1': 'Dois-je créer une holding pour mon entreprise ?',
+  'conseil.legal.a1': 'Une holding peut être intéressante si tu possèdes plusieurs sociétés ou si tu souhaites optimiser la fiscalité de tes dividendes. Elle permet aussi de faciliter la transmission et de protéger tes actifs. Je peux analyser ta situation pour voir si c\'est pertinent.',
+  'conseil.legal.q2': 'Comment transmettre mes actifs à mes enfants de manière optimale ?',
+  'conseil.legal.a2': 'Plusieurs options s\'offrent à toi : donation simple, donation-partage, démembrement de propriété, ou création d\'une holding familiale. Le choix dépend de ton âge, de la valeur de ton patrimoine et de tes objectifs. Je peux te mettre en contact avec un expert pour élaborer une stratégie sur mesure.',
+  'conseil.legal.q3': 'Quelle est la meilleure structure pour préparer ma succession ?',
+  'conseil.legal.a3': 'La préparation successorale doit commencer tôt. Entre pacte Dutreil, assurance-vie, SCI familiale et donations graduelles, il existe de nombreux outils. L\'objectif est de minimiser les droits de succession tout en préservant l\'harmonie familiale. Un audit patrimonial permet d\'identifier la meilleure stratégie.',
+  'conseil.legal.q4': 'Comment protéger mon patrimoine en cas de divorce ou de difficultés ?',
+  'conseil.legal.a4': 'La protection du patrimoine passe par le choix du régime matrimonial, la création de sociétés patrimoniales, et parfois des fiducies ou fondations. Chaque situation est unique et nécessite une analyse juridique approfondie pour sécuriser tes actifs.',
+  'conseil.legal.q5': 'Quels sont les avantages fiscaux d\'une holding ?',
+  'conseil.legal.a5': 'Une holding bénéficie du régime mère-fille qui permet de recevoir des dividendes avec seulement 5% de taxation. Elle offre aussi des possibilités d\'optimisation via l\'intégration fiscale, et facilite les opérations de croissance externe en permettant l\'effet de levier.',
 
   // Experts Page
   'experts.title': 'Trouver un expert',

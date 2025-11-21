@@ -14,7 +14,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="border-b border-border/50 bg-slate-dark/80 backdrop-blur-sm sticky top-0 z-50">
+    <header className="border-b border-border/50 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-12">
@@ -47,6 +47,16 @@ export const Header = () => {
                 }
               >
                 Annuaire Experts
+              </NavLink>
+              <NavLink
+                to="/conseil"
+                className={({ isActive }) =>
+                  `text-sm font-medium transition-colors hover:text-champagne ${
+                    isActive ? "text-champagne" : "text-muted-foreground"
+                  }`
+                }
+              >
+                Conseil Croissance & Cession
               </NavLink>
             </nav>
           </div>

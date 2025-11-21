@@ -77,7 +77,7 @@ export const AlerteCard = ({ alerte }: AlerteCardProps) => {
             size="sm"
             className={
               action.type === "primary"
-                ? "bg-champagne text-anthracite hover:bg-champagne-muted"
+                ? "bg-champagne text-white hover:bg-champagne-muted"
                 : "border-champagne text-champagne hover:bg-champagne/10"
             }
           >

@@ -62,7 +62,7 @@ export const CoachIAChat = ({ onClose }: CoachIAChatProps) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-anthracite/95 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 bg-background/95 backdrop-blur-sm z-50 flex items-center justify-center p-4">
       <div className="w-full max-w-4xl h-[80vh] glass-card flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-border/50">
@@ -113,7 +113,7 @@ export const CoachIAChat = ({ onClose }: CoachIAChatProps) => {
                 <div
                   className={`rounded-2xl p-4 ${
                     message.role === "user"
-                      ? "bg-slate-medium text-foreground"
+                      ? "bg-muted text-foreground"
                       : "bg-transparent border border-champagne/20 text-foreground"
                   }`}
                 >
@@ -132,7 +132,7 @@ export const CoachIAChat = ({ onClose }: CoachIAChatProps) => {
                         size="sm"
                         className={
                           action.type === "primary"
-                            ? "bg-champagne text-anthracite hover:bg-champagne-muted"
+                            ? "bg-champagne text-white hover:bg-champagne-muted"
                             : "border-champagne/50 text-champagne hover:bg-champagne/10"
                         }
                       >
@@ -189,13 +189,13 @@ export const CoachIAChat = ({ onClose }: CoachIAChatProps) => {
                 }
               }}
               placeholder="Posez votre question au coach IA..."
-              className="flex-1 bg-slate-medium border border-border/30 rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-champagne/50 resize-none min-h-[56px] max-h-[120px]"
+              className="flex-1 bg-muted border border-border/30 rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-champagne/50 resize-none min-h-[56px] max-h-[120px]"
               rows={1}
             />
             <Button
               onClick={handleSend}
               disabled={!inputValue.trim() || isTyping}
-              className="bg-champagne text-anthracite hover:bg-champagne-muted disabled:opacity-50 h-[56px] px-6"
+              className="bg-champagne text-white hover:bg-champagne-muted disabled:opacity-50 h-[56px] px-6"
             >
               <Send className="w-5 h-5" />
             </Button>

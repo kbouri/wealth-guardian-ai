@@ -164,4 +164,17 @@ export default {
   // Hero Metrics
   'hero.metrics.balanced': 'Équilibré',
   'hero.metrics.above-goals': 'Au-dessus de tes objectifs',
+  
+  // Profile Completion
+  'profileCompletion.title': 'Complétude du Profil',
+  'profileCompletion.progress': 'Progression',
+  'profileCompletion.completed': 'complétés',
+  'profileCompletion.identity': 'Identité',
+  'profileCompletion.address': 'Justificatif',
+  'profileCompletion.tax': 'Fiscal',
+  'profileCompletion.financial': 'Financier',
+  'profileCompletion.complete': '🎉 Bravo ! Votre profil est complet',
+  'profileCompletion.almostThere': 'Plus qu\'un effort, vous y êtes presque !',
+  'profileCompletion.halfway': 'Bon départ ! Continuez comme ça',
+  'profileCompletion.getStarted': 'Richie vous accompagne dans cette démarche',
 };

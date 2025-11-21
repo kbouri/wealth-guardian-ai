@@ -1,15 +1,17 @@
 import { useState, useRef, useEffect } from "react";
-import { X, Send, Sparkles } from "lucide-react";
+import { X, Send, Sparkles, Mic, MicOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CoachMessage } from "@/data/mockData";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useConversation } from "@11labs/react";
+import { toast } from "@/hooks/use-toast";
 
 interface CoachIAChatProps {
   onClose: () => void;
 }
 
 export const CoachIAChat = ({ onClose }: CoachIAChatProps) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   const getInitialMessages = (): CoachMessage[] => [
     {
@@ -45,6 +47,93 @@ export const CoachIAChat = ({ onClose }: CoachIAChatProps) => {
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  // Voice conversation setup
+  const conversation = useConversation({
+    onConnect: () => {
+      console.log('Voice conversation connected');
+      toast({
+        title: language === 'fr' ? "Conversation vocale active" : "Voice conversation active",
+        description: language === 'fr' ? "Vous pouvez maintenant parler avec Richie" : "You can now talk with Richie",
+      });
+    },
+    onDisconnect: () => {
+      console.log('Voice conversation disconnected');
+    },
+    onMessage: (message) => {
+      console.log('Voice message received:', message);
+      // Handle incoming voice messages
+      if (message.type === 'conversation.message.completed' && message.message?.role === 'assistant') {
+        const newMessage: CoachMessage = {
+          id: Date.now().toString(),
+          role: "assistant",
+          content: message.message.content?.[0]?.text || '',
+          timestamp: new Date().toISOString(),
+        };
+        setMessages((prev) => [...prev, newMessage]);
+      } else if (message.type === 'conversation.message.completed' && message.message?.role === 'user') {
+        const newMessage: CoachMessage = {
+          id: Date.now().toString(),
+          role: "user",
+          content: message.message.content?.[0]?.text || '',
+          timestamp: new Date().toISOString(),
+        };
+        setMessages((prev) => [...prev, newMessage]);
+      }
+    },
+    onError: (error) => {
+      console.error('Voice conversation error:', error);
+      toast({
+        title: language === 'fr' ? "Erreur" : "Error",
+        description: language === 'fr' ? "Erreur de connexion vocale" : "Voice connection error",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const startVoiceChat = async () => {
+    try {
+      // Request microphone access
+      await navigator.mediaDevices.getUserMedia({ audio: true });
+      
+      // Get agent ID from environment or use a default
+      const agentId = "your-agent-id-here"; // Replace with your ElevenLabs agent ID
+      
+      // Get signed URL from our edge function
+      const response = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/elevenlabs-auth`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ agentId }),
+        }
+      );
+      
+      if (!response.ok) {
+        throw new Error('Failed to get signed URL');
+      }
+      
+      const { signedUrl } = await response.json();
+      
+      // Start conversation with the signed URL
+      await conversation.startSession({
+        url: signedUrl,
+      });
+    } catch (error) {
+      console.error('Error starting voice chat:', error);
+      toast({
+        title: language === 'fr' ? "Erreur" : "Error",
+        description: language === 'fr' ? "Impossible de démarrer la conversation vocale" : "Cannot start voice conversation",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const stopVoiceChat = async () => {
+    await conversation.endSession();
+  };
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -108,14 +197,37 @@ export const CoachIAChat = ({ onClose }: CoachIAChatProps) => {
               </p>
             </div>
           </div>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={onClose}
-            className="text-muted-foreground hover:text-champagne"
-          >
-            <X className="w-5 h-5" />
-          </Button>
+          <div className="flex items-center gap-2">
+            {conversation.status === "connected" ? (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={stopVoiceChat}
+                className="text-red-500 hover:text-red-600 hover:bg-red-50"
+                title={language === 'fr' ? "Arrêter la conversation vocale" : "Stop voice conversation"}
+              >
+                <MicOff className="w-5 h-5" />
+              </Button>
+            ) : (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={startVoiceChat}
+                className="text-jade hover:text-jade-light hover:bg-jade/10"
+                title={language === 'fr' ? "Démarrer la conversation vocale" : "Start voice conversation"}
+              >
+                <Mic className="w-5 h-5" />
+              </Button>
+            )}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={onClose}
+              className="text-muted-foreground hover:text-champagne"
+            >
+              <X className="w-5 h-5" />
+            </Button>
+          </div>
         </div>
 
         {/* Messages */}

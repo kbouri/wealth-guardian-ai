@@ -30,17 +30,24 @@ const Home = () => {
             Une plateforme complète pour gérer votre patrimoine et accéder à un réseau
             d'experts sélectionnés par BNP Paribas
           </p>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/patrimoine">
-              <Button className="bg-champagne text-white hover:bg-champagne-muted h-14 px-8 text-base">
+              <Button className="bg-champagne text-white hover:bg-champagne-muted h-14 px-8 text-base w-full sm:w-auto">
                 Accéder à mon patrimoine
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
+            <Link to="/profil-investisseur">
+              <Button className="bg-jade text-white hover:bg-jade-light h-14 px-8 text-base w-full sm:w-auto">
+                Définir mon profil investisseur
+              </Button>
+            </Link>
+          </div>
+          <div className="mt-4 flex justify-center">
             <Link to="/experts">
               <Button
                 variant="outline"
-                className="border-champagne text-champagne hover:bg-champagne/10 h-14 px-8 text-base"
+                className="border-champagne text-champagne hover:bg-champagne/10 h-12 px-6 text-base"
               >
                 Consulter les experts
               </Button>

@@ -310,7 +310,7 @@ export interface HeroStatus {
 
 export const heroStatus: HeroStatus = {
   status: "success",
-  title: "✅ Tout roule, Karim",
+  title: "Tout roule, Karim",
   message: "Ton patrimoine est bien géré. Quelques trucs à valider quand tu as 20 minutes cette semaine.",
   metrics: {
     portfolio: "Équilibré",

@@ -8,7 +8,7 @@ export const WeeklyTasksCard = () => {
     <Card className="bg-white border-border p-6">
       <div className="mb-5">
         <h2 className="text-xl font-serif text-foreground mb-1">
-          🎯 Cette semaine
+          Cette semaine
         </h2>
         <p className="text-sm text-muted-foreground">
           2 trucs à checker quand tu as le temps

@@ -1,16 +1,24 @@
 import { NavLink } from "react-router-dom";
 import { userData } from "@/data/mockData";
-import { Bell, Settings, TrendingUp } from "lucide-react";
+import { Bell, Settings, TrendingUp, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Header = () => {
+  const { language, setLanguage, t } = useLanguage();
+  
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat("fr-FR", {
+    const locale = language === 'fr' ? 'fr-FR' : 'en-US';
+    return new Intl.NumberFormat(locale, {
       style: "currency",
       currency: "EUR",
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(value);
+  };
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'fr' ? 'en' : 'fr');
   };
 
   return (
@@ -20,10 +28,10 @@ export const Header = () => {
           <div className="flex items-center gap-12">
             <NavLink to="/" className="block">
               <h1 className="text-xl font-serif text-champagne">
-                BNP Paribas Patrimoine
+                {t('header.title')}
               </h1>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Gestion Privée
+                {t('header.subtitle')}
               </p>
             </NavLink>
 
@@ -36,7 +44,7 @@ export const Header = () => {
                   }`
                 }
               >
-                Gestion Patrimoine
+                {t('header.nav.patrimoine')}
               </NavLink>
               <NavLink
                 to="/documents"
@@ -46,7 +54,7 @@ export const Header = () => {
                   }`
                 }
               >
-                Vos Documents
+                {t('header.nav.documents')}
               </NavLink>
               <NavLink
                 to="/conseil"
@@ -56,7 +64,7 @@ export const Header = () => {
                   }`
                 }
               >
-                Conseil Croissance & Cession
+                {t('header.nav.conseil')}
               </NavLink>
             </nav>
           </div>
@@ -64,7 +72,7 @@ export const Header = () => {
           <div className="flex items-center gap-8">
             <div className="hidden lg:block text-right">
               <p className="text-xs text-muted-foreground mb-1">
-                Patrimoine Total
+                {t('header.patrimoine.total')}
               </p>
               <p className="text-2xl font-mono text-champagne font-bold">
                 {formatCurrency(userData.patrimoine)}
@@ -73,12 +81,21 @@ export const Header = () => {
                 <TrendingUp className="w-3.5 h-3.5" />
                 <span className="font-mono">+{userData.performance}%</span>
                 <span className="text-xs text-muted-foreground ml-1">
-                  ce mois
+                  {t('header.performance.month')}
                 </span>
               </div>
             </div>
 
             <div className="flex items-center gap-2 ml-4">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleLanguage}
+                className="text-muted-foreground hover:text-champagne"
+                title={language === 'fr' ? 'Switch to English' : 'Passer en français'}
+              >
+                <Languages className="w-5 h-5" />
+              </Button>
               <Button
                 variant="ghost"
                 size="icon"
@@ -99,7 +116,7 @@ export const Header = () => {
                     {userData.name}
                   </p>
                   <p className="text-xs text-muted-foreground capitalize">
-                    Profil {userData.profilInvestisseur}
+                    {t('header.profile.type')} {userData.profilInvestisseur}
                   </p>
                 </div>
                 <div className="w-10 h-10 rounded-full bg-champagne/20 flex items-center justify-center">

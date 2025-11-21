@@ -8,7 +8,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { RichieAssistant } from "@/components/RichieAssistant";
 import { DynamicNotifications } from "@/components/DynamicNotifications";
 import { CoachIAChat } from "@/components/CoachIAChat";
-import richieAvatar from "@/assets/richie-avatar.png";
+import richie3D from "@/assets/richie-3d.png";
 
 const Home = () => {
   const { language, t } = useLanguage();
@@ -32,13 +32,15 @@ const Home = () => {
         {/* Hero Section */}
         <div className="max-w-4xl mx-auto text-center mb-20">
           <div className="flex justify-center mb-8 animate-scale-in">
-            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-champagne/30 shadow-premium">
-              <img
-                src={richieAvatar}
-                alt="Richie"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <img
+              src={richie3D}
+              alt="Richie"
+              className="h-64 w-auto object-contain animate-fade-in"
+              style={{
+                filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25)) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15))',
+                transform: 'perspective(1000px) rotateY(-5deg)',
+              }}
+            />
           </div>
           <h1 className="text-5xl md:text-6xl font-serif text-champagne mb-6 leading-tight">
             {t('home.hero.title.1')}

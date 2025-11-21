@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 import { Card } from "@/components/ui/card";
 import { portefeuilleLignes } from "@/data/mockData";
+import { CorrelationAnalysisDialog } from "./CorrelationAnalysisDialog";
 
 export const PatrimoineOverviewCard = () => {
+  const [showCorrelationDialog, setShowCorrelationDialog] = useState(false);
   const chartData = portefeuilleLignes.map((ligne) => ({
     name: ligne.nom,
     value: ligne.allocation,
@@ -120,13 +123,21 @@ export const PatrimoineOverviewCard = () => {
           </span>
           <span className="text-sm font-mono text-foreground">0.42</span>
         </div>
-        <button className="w-full mt-3 text-sm text-champagne hover:text-champagne-muted transition-colors flex items-center justify-center gap-2 group">
+        <button 
+          onClick={() => setShowCorrelationDialog(true)}
+          className="w-full mt-3 text-sm text-champagne hover:text-champagne-muted transition-colors flex items-center justify-center gap-2 group"
+        >
           Analyser les corrélations
           <span className="group-hover:translate-x-1 transition-transform">
             →
           </span>
         </button>
       </div>
+
+      <CorrelationAnalysisDialog 
+        open={showCorrelationDialog}
+        onOpenChange={setShowCorrelationDialog}
+      />
     </Card>
   );
 };

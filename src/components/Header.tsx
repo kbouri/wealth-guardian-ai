@@ -1,6 +1,6 @@
 import { NavLink, Link } from "react-router-dom";
 import { userData } from "@/data/mockData";
-import { TrendingUp, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -73,13 +73,6 @@ export const Header = () => {
               <p className="text-3xl font-mono text-champagne font-bold">
                 {formatCurrency(userData.patrimoine)}
               </p>
-              <div className="flex items-center justify-end gap-1 text-jade text-base mt-1">
-                <TrendingUp className="w-4 h-4" />
-                <span className="font-mono">+{userData.performance}%</span>
-                <span className="text-sm text-muted-foreground ml-1">
-                  {t('header.performance.month')}
-                </span>
-              </div>
             </div>
 
             <Link to="/profil-investisseur" className="hidden md:block">

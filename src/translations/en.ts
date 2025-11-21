@@ -108,4 +108,60 @@ export default {
   'patrimoine.lines.title': 'Your main positions',
   'patrimoine.lines.subtitle': 'Live performance',
   'patrimoine.view-all': 'View your full portfolio',
+  'patrimoine.weekly.title': 'This week',
+  'patrimoine.weekly.subtitle': '2 things to check when you want',
+  'patrimoine.opportunities.title': 'Opportunities for you',
+  'patrimoine.opportunities.subtitle': 'If you\'re interested',
+  'patrimoine.opportunities.explore': 'Explore',
+  'patrimoine.overview.title': 'How it\'s distributed',
+  'patrimoine.overview.subtitle': 'Your different investment types',
+  'patrimoine.overview.total': 'Total',
+  'patrimoine.overview.correlation': 'Your portfolio correlation',
+  'patrimoine.overview.analyze': 'Let\'s take a look?',
+  'patrimoine.type.immobilier': 'Real Estate',
+  'patrimoine.type.action': 'Stocks',
+  'patrimoine.type.crypto': 'Crypto',
+  'patrimoine.type.liquidite': 'Cash',
+  'patrimoine.type.equity': 'Equity',
+  'patrimoine.item.of-total': 'of total',
+  
+  // Hero Status
+  'hero.title': 'All good, {name}! 👍',
+  'hero.message': 'Your wealth is well managed. I just have a couple of things to show you when you have 20 minutes this week.',
+  'hero.portfolio': 'Portfolio',
+  'hero.liquidites': 'Cash',
+  'hero.performance': 'Performance',
+  
+  // Coach
+  'coach.name': 'Richie',
+  'coach.chat': 'Chat',
+  
+  // Weekly Tasks
+  'task.per.title': 'Your PER before year-end',
+  'task.per.desc': 'You can still put 8K€ in your PER to save on 2024 taxes. Now\'s the time!',
+  'task.per.time': '20 min',
+  'task.per.impact': '8K€ less in taxes',
+  'task.per.action1': 'Do it now',
+  'task.per.action2': 'Later',
+  'task.tesla.title': 'Tesla dropped a bit',
+  'task.tesla.desc': 'Your Tesla shares lost 12%. It\'s normal in the current context. Do you prefer to keep (long term vision) or secure now?',
+  'task.tesla.time': '10 min',
+  'task.tesla.impact': 'Decision to make',
+  'task.tesla.action1': 'View your analysis',
+  'task.tesla.action2': 'I\'ll think about it',
+  
+  // Opportunities
+  'opp.credit.title': 'You can borrow if you want',
+  'opp.credit.desc': '650K€ available for your next real estate project',
+  'opp.expert.title': 'A tax specialist available for you',
+  'opp.expert.desc': 'Marie Dubois can help you optimize your crypto losses',
+  'opp.scpi.title': 'Nice SCPI at 5.2%',
+  'opp.scpi.desc': 'An opportunity in commercial real estate with good returns',
+  
+  // Coach Message
+  'coach.welcome': 'This week, I have two little things to show you. For the rest, it\'s all good, don\'t worry!',
+  
+  // Hero Metrics
+  'hero.metrics.balanced': 'Balanced',
+  'hero.metrics.above-goals': 'Above your goals',
 };

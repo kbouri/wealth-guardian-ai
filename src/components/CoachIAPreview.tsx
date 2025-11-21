@@ -37,7 +37,7 @@ export const CoachIAPreview = ({ onOpenChat }: CoachIAPreviewProps) => {
                 size="sm"
                 className={
                   action.type === "primary"
-                    ? "bg-champagne text-anthracite hover:bg-champagne-muted"
+                    ? "bg-champagne text-white hover:bg-champagne-muted"
                     : "border-champagne/50 text-champagne hover:bg-champagne/10"
                 }
               >
@@ -50,7 +50,7 @@ export const CoachIAPreview = ({ onOpenChat }: CoachIAPreviewProps) => {
 
       <Button
         onClick={onOpenChat}
-        className="w-full bg-champagne text-anthracite hover:bg-champagne-muted font-medium"
+        className="w-full bg-champagne text-white hover:bg-champagne-muted font-medium"
       >
         <MessageSquare className="w-4 h-4 mr-2" />
         Ouvrir la conversation

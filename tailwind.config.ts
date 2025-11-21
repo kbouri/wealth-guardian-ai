@@ -59,7 +59,7 @@ export default {
         },
         anthracite: "hsl(var(--anthracite))",
         slate: {
-          dark: "hsl(var(--slate-dark))",
+          light: "hsl(var(--slate-light))",
           medium: "hsl(var(--slate-medium))",
         },
         champagne: {

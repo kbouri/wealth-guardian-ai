@@ -28,7 +28,7 @@ const Patrimoine = () => {
 
           <Button
             onClick={() => setIsChatOpen(true)}
-            className="bg-champagne text-anthracite hover:bg-champagne-muted h-12 px-6"
+            className="bg-champagne text-white hover:bg-champagne-muted h-12 px-6"
           >
             <Bot className="w-5 h-5 mr-2" />
             Coach IA & Analyses
@@ -37,7 +37,7 @@ const Patrimoine = () => {
 
         {/* Quick Actions */}
         <div className="flex gap-3 mb-8">
-          <Button className="bg-champagne text-anthracite hover:bg-champagne-muted">
+          <Button className="bg-champagne text-white hover:bg-champagne-muted">
             <DollarSign className="w-4 h-4 mr-2" />
             Acheter
           </Button>

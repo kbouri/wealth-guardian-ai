@@ -176,7 +176,7 @@ const Experts = () => {
               placeholder="Rechercher un expert par nom ou spécialité..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-12 h-14 bg-slate-dark/60 border-border/50 text-foreground"
+              className="pl-12 h-14 bg-white/60 border-border/50 text-foreground"
             />
           </div>
 
@@ -186,7 +186,7 @@ const Experts = () => {
               onClick={() => setSelectedType("all")}
               className={
                 selectedType === "all"
-                  ? "bg-champagne text-anthracite hover:bg-champagne-muted"
+                  ? "bg-champagne text-white hover:bg-champagne-muted"
                   : "border-champagne/50 text-champagne hover:bg-champagne/10"
               }
             >
@@ -199,7 +199,7 @@ const Experts = () => {
                 onClick={() => setSelectedType(type)}
                 className={
                   selectedType === type
-                    ? "bg-champagne text-anthracite hover:bg-champagne-muted"
+                    ? "bg-champagne text-white hover:bg-champagne-muted"
                     : "border-champagne/50 text-champagne hover:bg-champagne/10"
                 }
               >
@@ -216,7 +216,7 @@ const Experts = () => {
             return (
               <div
                 key={expert.id}
-                className="bg-slate-dark/60 backdrop-blur-sm border border-border/50 rounded-lg p-6 hover:border-champagne/50 transition-all hover:shadow-premium"
+                className="bg-white backdrop-blur-sm border border-border/50 rounded-lg p-6 hover:border-champagne/50 transition-all hover:shadow-premium"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="w-12 h-12 rounded-full bg-champagne/20 flex items-center justify-center">
@@ -264,7 +264,7 @@ const Experts = () => {
                 </p>
 
                 <Button
-                  className="w-full bg-champagne text-anthracite hover:bg-champagne-muted"
+                  className="w-full bg-champagne text-white hover:bg-champagne-muted"
                   disabled={!expert.available}
                 >
                   <Calendar className="w-4 h-4 mr-2" />

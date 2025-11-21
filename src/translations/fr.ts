@@ -108,4 +108,60 @@ export default {
   'patrimoine.lines.title': 'Tes principales lignes',
   'patrimoine.lines.subtitle': 'Les perfs en direct',
   'patrimoine.view-all': 'Voir tout ton portefeuille',
+  'patrimoine.weekly.title': 'Cette semaine',
+  'patrimoine.weekly.subtitle': '2 trucs à checker quand tu veux',
+  'patrimoine.opportunities.title': 'Des opportunités pour toi',
+  'patrimoine.opportunities.subtitle': 'Si ça t\'intéresse',
+  'patrimoine.opportunities.explore': 'Explorer',
+  'patrimoine.overview.title': 'Comment c\'est réparti',
+  'patrimoine.overview.subtitle': 'Tes différents types d\'investissements',
+  'patrimoine.overview.total': 'Total',
+  'patrimoine.overview.correlation': 'Corrélation de ton portefeuille',
+  'patrimoine.overview.analyze': 'On regarde ça ensemble ?',
+  'patrimoine.type.immobilier': 'Immobilier',
+  'patrimoine.type.action': 'Actions',
+  'patrimoine.type.crypto': 'Crypto',
+  'patrimoine.type.liquidite': 'Liquidités',
+  'patrimoine.type.equity': 'Equity',
+  'patrimoine.item.of-total': 'du total',
+  
+  // Hero Status
+  'hero.title': 'Tout roule, {name} ! 👍',
+  'hero.message': 'Ton patrimoine est bien géré. J\'ai juste deux-trois petites choses à te montrer quand tu auras 20 minutes cette semaine.',
+  'hero.portfolio': 'Portfolio',
+  'hero.liquidites': 'Liquidités',
+  'hero.performance': 'Performance',
+  
+  // Coach
+  'coach.name': 'Richie',
+  'coach.chat': 'Discuter',
+  
+  // Weekly Tasks
+  'task.per.title': 'Ton PER avant la fin d\'année',
+  'task.per.desc': 'Tu peux encore mettre 8K€ sur ton PER pour économiser des impôts en 2024. C\'est le moment !',
+  'task.per.time': '20 min',
+  'task.per.impact': '8K€ d\'impôts en moins',
+  'task.per.action1': 'Je le fais maintenant',
+  'task.per.action2': 'Plus tard',
+  'task.tesla.title': 'Tesla baisse un peu',
+  'task.tesla.desc': 'Tes actions Tesla ont perdu 12%. C\'est normal dans le contexte actuel. Tu préfères garder (vision long terme) ou sécuriser maintenant ?',
+  'task.tesla.time': '10 min',
+  'task.tesla.impact': 'Décision à prendre',
+  'task.tesla.action1': 'Voir ton analyse',
+  'task.tesla.action2': 'J\'y réfléchis',
+  
+  // Opportunities
+  'opp.credit.title': 'Tu peux emprunter si tu veux',
+  'opp.credit.desc': '650K€ disponibles pour ton prochain projet immobilier',
+  'opp.expert.title': 'Un fiscaliste dispo pour toi',
+  'opp.expert.desc': 'Marie Dubois peut t\'aider à optimiser tes moins-values crypto',
+  'opp.scpi.title': 'SCPI sympa à 5,2%',
+  'opp.scpi.desc': 'Une opportunité en immobilier commercial avec un bon rendement',
+  
+  // Coach Message
+  'coach.welcome': 'Cette semaine, j\'ai deux petits trucs à te montrer. Pour le reste, c\'est nickel, t\'inquiète !',
+  
+  // Hero Metrics
+  'hero.metrics.balanced': 'Équilibré',
+  'hero.metrics.above-goals': 'Au-dessus de tes objectifs',
 };

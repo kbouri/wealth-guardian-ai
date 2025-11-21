@@ -295,3 +295,103 @@ export const correlationMatrix = {
   immobilierCorrelation: 0.12,
   cryptoCorrelation: 0.65,
 };
+
+// Hero Status - Message rassurant
+export interface HeroStatus {
+  status: "success" | "warning" | "info";
+  title: string;
+  message: string;
+  metrics: {
+    portfolio: string;
+    liquidites: string;
+    performance: string;
+  };
+}
+
+export const heroStatus: HeroStatus = {
+  status: "success",
+  title: "✅ Tout roule, Karim",
+  message: "Ton patrimoine est bien géré. Quelques trucs à valider quand tu as 20 minutes cette semaine.",
+  metrics: {
+    portfolio: "Équilibré",
+    liquidites: "850K€",
+    performance: "Au-dessus objectifs",
+  },
+};
+
+// Tâches de la semaine (2-3 max)
+export interface WeeklyTask {
+  id: string;
+  titre: string;
+  description: string;
+  timeEstimate: string;
+  impact: string;
+  priority: "high" | "medium";
+  actions: Array<{
+    label: string;
+    type: "primary" | "secondary";
+  }>;
+}
+
+export const weeklyTasks: WeeklyTask[] = [
+  {
+    id: "1",
+    titre: "Versement PER avant fin d'année",
+    description: "Tu peux encore placer 8K€ sur ton PER pour réduire tes impôts 2024.",
+    timeEstimate: "20 min",
+    impact: "Économise 8K€ d'impôts",
+    priority: "high",
+    actions: [
+      { label: "Faire maintenant", type: "primary" },
+      { label: "Plus tard", type: "secondary" },
+    ],
+  },
+  {
+    id: "2",
+    titre: "Position Tesla en baisse",
+    description: "Tes actions Tesla ont baissé de 12%. C'est normal avec le marché. Tu peux garder (vision long terme) ou arbitrer pour sécuriser.",
+    timeEstimate: "10 min",
+    impact: "Décider si tu arbitres",
+    priority: "medium",
+    actions: [
+      { label: "Voir l'analyse", type: "primary" },
+      { label: "Ça peut attendre", type: "secondary" },
+    ],
+  },
+];
+
+// Opportunités (collapsible)
+export interface Opportunity {
+  id: string;
+  titre: string;
+  description: string;
+  type: "credit" | "expert" | "investissement";
+}
+
+export const opportunities: Opportunity[] = [
+  {
+    id: "1",
+    titre: "Capacité crédit débloquée",
+    description: "650K€ disponibles pour ton prochain investissement immobilier",
+    type: "credit",
+  },
+  {
+    id: "2",
+    titre: "Fiscaliste crypto disponible",
+    description: "Marie Dubois peut t'aider à optimiser tes moins-values crypto",
+    type: "expert",
+  },
+  {
+    id: "3",
+    titre: "SCPI rendement 5,2%",
+    description: "Opportunité immobilier commercial avec bon rendement",
+    type: "investissement",
+  },
+];
+
+// Message coach bienveillant
+export const coachWelcomeMessage = {
+  role: "assistant" as const,
+  content: "Cette semaine, 2 trucs à checker. Sinon tout est sous contrôle.",
+  tone: "bienveillant",
+};

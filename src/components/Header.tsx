@@ -1,6 +1,6 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { userData } from "@/data/mockData";
-import { Bell, Settings, TrendingUp, Languages } from "lucide-react";
+import { Bell, Settings, TrendingUp, Languages, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -85,6 +85,13 @@ export const Header = () => {
                 </span>
               </div>
             </div>
+
+            <Link to="/profil-investisseur" className="hidden md:block">
+              <Button className="bg-champagne text-white hover:bg-champagne-muted h-11 px-6 gap-2">
+                <Sparkles className="w-4 h-4" />
+                {t('home.hero.btn.profile')}
+              </Button>
+            </Link>
 
             <div className="flex items-center gap-2 ml-4">
               <Button

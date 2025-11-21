@@ -34,7 +34,7 @@ export const OpportunitiesCard = () => {
               Opportunités
             </h2>
             <p className="text-sm text-muted-foreground">
-              Si tu as le temps
+              Si vous le souhaitez
             </p>
           </div>
           <CollapsibleTrigger asChild>

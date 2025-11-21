@@ -310,12 +310,12 @@ export interface HeroStatus {
 
 export const heroStatus: HeroStatus = {
   status: "success",
-  title: "Tout roule, Karim",
-  message: "Ton patrimoine est bien géré. Quelques trucs à valider quand tu as 20 minutes cette semaine.",
+  title: "Tout est en ordre, Karim",
+  message: "Votre patrimoine est parfaitement géré. Quelques points à valider lorsque vous aurez 20 minutes cette semaine.",
   metrics: {
     portfolio: "Équilibré",
     liquidites: "850K€",
-    performance: "Au-dessus objectifs",
+    performance: "Au-dessus des objectifs",
   },
 };
 
@@ -337,25 +337,25 @@ export const weeklyTasks: WeeklyTask[] = [
   {
     id: "1",
     titre: "Versement PER avant fin d'année",
-    description: "Tu peux encore placer 8K€ sur ton PER pour réduire tes impôts 2024.",
+    description: "Vous pouvez encore placer 8K€ sur votre PER pour optimiser votre fiscalité 2024.",
     timeEstimate: "20 min",
-    impact: "Économise 8K€ d'impôts",
+    impact: "Économie de 8K€ d'impôts",
     priority: "high",
     actions: [
-      { label: "Faire maintenant", type: "primary" },
-      { label: "Plus tard", type: "secondary" },
+      { label: "Effectuer maintenant", type: "primary" },
+      { label: "Reporter", type: "secondary" },
     ],
   },
   {
     id: "2",
     titre: "Position Tesla en baisse",
-    description: "Tes actions Tesla ont baissé de 12%. C'est normal avec le marché. Tu peux garder (vision long terme) ou arbitrer pour sécuriser.",
+    description: "Vos actions Tesla ont baissé de 12%. Cette correction est normale dans le contexte actuel. Vous pouvez conserver (vision long terme) ou arbitrer pour sécuriser.",
     timeEstimate: "10 min",
-    impact: "Décider si tu arbitres",
+    impact: "Décision d'arbitrage",
     priority: "medium",
     actions: [
-      { label: "Voir l'analyse", type: "primary" },
-      { label: "Ça peut attendre", type: "secondary" },
+      { label: "Consulter l'analyse", type: "primary" },
+      { label: "Reporter la décision", type: "secondary" },
     ],
   },
 ];
@@ -371,20 +371,20 @@ export interface Opportunity {
 export const opportunities: Opportunity[] = [
   {
     id: "1",
-    titre: "Capacité crédit débloquée",
-    description: "650K€ disponibles pour ton prochain investissement immobilier",
+    titre: "Capacité de crédit disponible",
+    description: "650K€ mobilisables pour votre prochain investissement immobilier",
     type: "credit",
   },
   {
     id: "2",
     titre: "Fiscaliste crypto disponible",
-    description: "Marie Dubois peut t'aider à optimiser tes moins-values crypto",
+    description: "Marie Dubois peut vous accompagner dans l'optimisation de vos moins-values crypto",
     type: "expert",
   },
   {
     id: "3",
     titre: "SCPI rendement 5,2%",
-    description: "Opportunité immobilier commercial avec bon rendement",
+    description: "Opportunité en immobilier commercial avec rendement attractif",
     type: "investissement",
   },
 ];
@@ -392,6 +392,6 @@ export const opportunities: Opportunity[] = [
 // Message coach bienveillant
 export const coachWelcomeMessage = {
   role: "assistant" as const,
-  content: "Cette semaine, 2 trucs à checker. Sinon tout est sous contrôle.",
+  content: "Cette semaine, deux points à valider. Pour le reste, tout est parfaitement sous contrôle.",
   tone: "bienveillant",
 };

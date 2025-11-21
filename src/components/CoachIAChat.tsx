@@ -62,20 +62,20 @@ export const CoachIAChat = ({ onClose }: CoachIAChatProps) => {
     },
     onMessage: (message) => {
       console.log('Voice message received:', message);
-      // Handle incoming voice messages
-      if (message.type === 'conversation.message.completed' && message.message?.role === 'assistant') {
+      // Handle incoming voice messages from ElevenLabs
+      if (message.source === 'ai' && message.message) {
         const newMessage: CoachMessage = {
           id: Date.now().toString(),
           role: "assistant",
-          content: message.message.content?.[0]?.text || '',
+          content: message.message,
           timestamp: new Date().toISOString(),
         };
         setMessages((prev) => [...prev, newMessage]);
-      } else if (message.type === 'conversation.message.completed' && message.message?.role === 'user') {
+      } else if (message.source === 'user' && message.message) {
         const newMessage: CoachMessage = {
           id: Date.now().toString(),
           role: "user",
-          content: message.message.content?.[0]?.text || '',
+          content: message.message,
           timestamp: new Date().toISOString(),
         };
         setMessages((prev) => [...prev, newMessage]);
@@ -119,7 +119,7 @@ export const CoachIAChat = ({ onClose }: CoachIAChatProps) => {
       
       // Start conversation with the signed URL
       await conversation.startSession({
-        url: signedUrl,
+        signedUrl: signedUrl,
       });
     } catch (error) {
       console.error('Error starting voice chat:', error);

@@ -164,4 +164,17 @@ export default {
   // Hero Metrics
   'hero.metrics.balanced': 'Balanced',
   'hero.metrics.above-goals': 'Above your goals',
+  
+  // Profile Completion
+  'profileCompletion.title': 'Profile Completion',
+  'profileCompletion.progress': 'Progress',
+  'profileCompletion.completed': 'completed',
+  'profileCompletion.identity': 'Identity',
+  'profileCompletion.address': 'Address Proof',
+  'profileCompletion.tax': 'Tax',
+  'profileCompletion.financial': 'Financial',
+  'profileCompletion.complete': '🎉 Congratulations! Your profile is complete',
+  'profileCompletion.almostThere': 'Almost there! Just one more step',
+  'profileCompletion.halfway': 'Great start! Keep it up',
+  'profileCompletion.getStarted': 'Richie is here to guide you through this',
 };
